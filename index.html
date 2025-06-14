@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ارتحت | إدارة العقارات والصيانة</title>
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      background-color: #f9f9f9;
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    main { flex: 1; }
+
+    .banner {
+      background: linear-gradient(to right, #004080, #3399ff);
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .section {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .section h2 {
+      color: #0077cc;
+      margin-bottom: 30px;
+    }
+
+    .services {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .card {
+      background-color: white;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      padding: 20px;
+      border-radius: 10px;
+      width: 300px;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .contact-form {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: right;
+    }
+
+    .contact-form label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      resize: vertical;
+    }
+
+    .contact-form button {
+      margin-top: 20px;
+      background-color: #0077cc;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .contact-form button:hover {
+      background-color: #005fa3;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- الهيدر -->
+  <div id="header">تحميل الهيدر...</div>
+
+  <main>
+    <div class="banner">
+      <h1>مرحباً بكم في منصة ارتحت</h1>
+      <p>إدارة عقارات – خدمات مقاولات – صيانة متكاملة</p>
+    </div>
+
+    <div class="section" id="services">
+      <h2>خدماتنا</h2>
+      <div class="services">
+        <div class="card">
+          <h3>إدارة العقارات</h3>
+          <p>تأجير، صيانة، متابعة الدفعات والتقارير.</p>
+        </div>
+        <div class="card">
+          <h3>خدمات المقاولات</h3>
+          <p>بناء، ترميم، تجهيزات داخلية وخارجية.</p>
+        </div>
+        <div class="card">
+          <h3>الصيانة الشاملة</h3>
+          <p>كهرباء، سباكة، دهانات، مكيفات والمزيد.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="contact">
+      <h2>تواصل معنا</h2>
+      <form class="contact-form">
+        <label for="name">الاسم الكامل</label>
+        <input type="text" id="name" name="name" placeholder="ادخل اسمك" required>
+
+        <label for="email">البريد الإلكتروني</label>
+        <input type="email" id="email" name="email" placeholder="ادخل بريدك" required>
+
+        <label for="message">رسالتك</label>
+        <textarea id="message" name="message" rows="4" placeholder="اكتب رسالتك هنا" required></textarea>
+
+        <button type="submit">إرسال</button>
+      </form>
+    </div>
+  </main>
+
+  <!-- الفوتر -->
+  <div id="footer">تحميل الفوتر...</div>
+
+  <script>
+    // تحميل الهيدر
+    fetch("header.html")
+      .then(response => response.text())
+      .then(data => document.getElementById("header").innerHTML = data)
+      .catch(err => console.error("خطأ في تحميل الهيدر:", err));
+
+    // تحميل الفوتر
+    fetch("footer.html")
+      .then(response => response.text())
+      .then(data => document.getElementById("footer").innerHTML = data)
+      .catch(err => console.error("خطأ في تحميل الفوتر:", err));
+  </script>
+
+</body>
+</html>

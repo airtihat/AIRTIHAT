@@ -1,0 +1,30 @@
+<header style="background-color: #0077cc; color: white; padding: 15px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;">
+  <div style="display: flex; align-items: center;">
+    <img src="logo.png" alt="شعار الشركة" style="height: 40px; margin-left: 15px;">
+    <h1 style="margin: 0;">شركة ارتحت العقارية</h1>
+  </div>
+
+  <nav style="text-align: center; flex-grow: 1;">
+    <a href="index.html" style="color:white; margin: 0 10px;">الرئيسية</a>
+    <a href="#services" style="color:white; margin: 0 10px;">الخدمات</a>
+    <a href="#contact" style="color:white; margin: 0 10px;">تواصل معنا</a>
+    <a href="register.html" style="color:white; margin: 0 10px;">التسجيل</a>
+    <a href="login.html" style="color:white; margin: 0 10px;">دخول</a>
+    <a href="account.html" style="color:white; margin: 0 10px;">حسابي</a>
+    <a href="https://wa.me/966505496367" target="_blank" style="color:white; background-color: #25D366; padding: 6px 10px; border-radius: 5px; text-decoration: none; margin-right: 10px;">واتساب</a>
+  </nav>
+
+  <div id="datetime" style="font-size: 14px;"></div>
+
+  <script>
+    function updateDateTime() {
+      const now = new Date();
+      const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+      const time = now.toLocaleTimeString('ar-SA');
+      const date = now.toLocaleDateString('ar-SA', options);
+      document.getElementById('datetime').textContent = `🕒 ${date} | ${time}`;
+    }
+    updateDateTime();
+    setInterval(updateDateTime, 1000);
+  </script>
+</header>
