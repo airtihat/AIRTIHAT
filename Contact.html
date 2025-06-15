@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>اتصل بنا - شركة ارتحت العقارية</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Cairo', sans-serif;
+      margin: 0;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      background-color: #0077cc;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0;
+    }
+
+    .contact-container {
+      max-width: 1000px;
+      margin: 40px auto;
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .contact-info, .contact-form {
+      padding: 20px;
+    }
+
+    .contact-info h2, .contact-form h2 {
+      margin-top: 0;
+      color: #0077cc;
+    }
+
+    .contact-info p {
+      margin: 10px 0;
+      line-height: 1.6;
+    }
+
+    form label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-family: 'Cairo', sans-serif;
+    }
+
+    form textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    form button {
+      background-color: #0077cc;
+      color: white;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 5px;
+      margin-top: 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    form button:hover {
+      background-color: #005fa3;
+    }
+
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .col {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    @media (max-width: 768px) {
+      .row {
+        flex-direction: column;
+      }
+    }
+
+    footer {
+      background-color: #333;
+      color: #ccc;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>اتصل بنا</h1>
+  </header>
+
+  <div class="contact-container">
+    <div class="row">
+      <div class="col contact-info">
+        <h2>معلومات التواصل</h2>
+        <p><strong>العنوان:</strong> حي العليا، الرياض، المملكة العربية السعودية</p>
+        <p><strong>الهاتف:</strong> 920000000</p>
+        <p><strong>البريد الإلكتروني:</strong> info@example.com</p>
+        <p><strong>ساعات العمل:</strong> الأحد - الخميس، 9 صباحًا - 5 مساءً</p>
+      </div>
+
+      <div class="col contact-form">
+        <h2>أرسل رسالة</h2>
+        <form action="#" method="post">
+          <label for="name">الاسم الكامل</label>
+          <input type="text" id="name" name="name" placeholder="أدخل اسمك" required>
+
+          <label for="email">البريد الإلكتروني</label>
+          <input type="email" id="email" name="email" placeholder="example@email.com" required>
+
+          <label for="subject">الموضوع</label>
+          <input type="text" id="subject" name="subject" placeholder="عنوان الرسالة" required>
+
+          <label for="message">الرسالة</label>
+          <textarea id="message" name="message" placeholder="اكتب رسالتك هنا..." required></textarea>
+
+          <button type="submit">إرسال</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 شركة ارتحت العقارية - جميع الحقوق محفوظة
+  </footer>
+
+</body>
+</html>

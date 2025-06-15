@@ -1,53 +1,152 @@
-<header style="background-color: #0077cc; color: white; padding: 15px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;">
-  <div style="display: flex; align-items: center;">
-    <img src="logo.png" alt="شعار الشركة" style="height: 40px; margin-left: 15px;">
-    <h1 style="margin: 0;">شركة ارتحت العقارية</h1>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>شركة ارتحت العقارية</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+    }
+
+    header {
+      background-color: #0077cc;
+      color: white;
+      padding: 10px 15px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      z-index: 1000;
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo-area h1 {
+      margin: 0;
+      font-size: 18px;
+    }
+
+    nav {
+      display: flex;
+      gap: 10px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    #menu-toggle {
+      display: none;
+      font-size: 28px;
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #0077cc;
+        width: 100%;
+        flex-direction: column;
+        padding: 10px;
+      }
+
+      nav.show {
+        display: flex;
+      }
+
+      #menu-toggle {
+        display: block;
+      }
+
+      nav a {
+        margin: 10px 0;
+      }
+    }
+
+    #datetime {
+      font-size: 12px;
+      margin-top: 5px;
+      text-align: center;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
+      color: white;
+      border-radius: 50%;
+      width: 55px;
+      height: 55px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      text-decoration: none;
+      z-index: 9999;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    }
+
+    .whatsapp-float img {
+      width: 30px;
+      height: 30px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo-area">
+    <h1>شركة ارتحت العقارية</h1>
   </div>
 
-  <nav style="text-align: center; flex-grow: 1;">
-    <a href="index.html" style="color:white; margin: 0 10px;">الرئيسية</a>
-    <a href="#services" style="color:white; margin: 0 10px;">الخدمات</a>
-    <a href="Contact.html" style="color:white; margin: 0 10px;">تواصل معنا</a>
-    <a href="register.html" style="color:white; margin: 0 10px;">التسجيل</a>
-    <a href="login.html" style="color:white; margin: 0 10px;">دخول</a>
-    <a href="account.html" style="color:white; margin: 0 10px;">حسابي</a>
-    <a href="https://wa.me/966505496367" target="_blank" style="color:white; background-color: #25D366; padding: 6px 10px; border-radius: 5px; text-decoration: none; margin-right: 10px;">واتساب</a>
+  <button id="menu-toggle">☰</button>
+
+  <nav id="nav-menu">
+    <a href="index.html">الرئيسية</a>
+    <a href="#services">الخدمات</a>
+    <a href="Contact.html">تواصل معنا</a>
+    <a href="register.html">التسجيل</a>
+    <a href="login.html">دخول</a>
+    <a href="account.html">حسابي</a>
   </nav>
-
-  <div id="datetime" style="font-size: 14px;"></div>
-
-  <script>
-    function updateDateTime() {
-      const now = new Date();
-      const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-      const time = now.toLocaleTimeString('ar-SA');
-      const date = now.toLocaleDateString('ar-SA', options);
-      document.getElementById('datetime').textContent = `🕒 ${date} | ${time}`;
-    }
-    updateDateTime();
-    setInterval(updateDateTime, 1000);
-  </script>
 </header>
 
-<!-- زر واتساب عائم في أسفل يمين الصفحة -->
-<a href="https://wa.me/966505496367" target="_blank" 
-   style="
-     position: fixed;
-     bottom: 20px;
-     right: 20px;
-     background-color: #25D366;
-     color: white;
-     border-radius: 50%;
-     width: 55px;
-     height: 55px;
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     font-size: 28px;
-     text-decoration: none;
-     z-index: 9999;
-     box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-   "
-   title="تواصل معنا عبر واتساب">
-  🟢
+<div id="datetime"></div>
+
+<!-- زر واتساب -->
+<a href="https://wa.me/966505496367" target="_blank" class="whatsapp-float" title="تواصل معنا عبر واتساب">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="واتساب">
 </a>
+
+<script>
+  function updateDateTime() {
+    const now = new Date();
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    const time = now.toLocaleTimeString('ar-SA');
+    const date = now.toLocaleDateString('ar-SA', options);
+    document.getElementById('datetime').textContent = `🕒 ${date} | ${time}`;
+  }
+  updateDateTime();
+  setInterval(updateDateTime, 1000);
+
+  document.getElementById("menu-toggle").addEventListener("click", function () {
+    document.getElementById("nav-menu").classList.toggle("show");
+  });
+</script>
+
+</body>
+</html>

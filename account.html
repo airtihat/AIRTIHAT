@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>حسابي - شركة ارتحت العقارية</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      background-color: #f7f7f7;
+      color: #333;
+    }
+
+    header {
+      background-color: #0077cc;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 30px auto;
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      color: #0077cc;
+      text-align: center;
+    }
+
+    label {
+      display: block;
+      margin: 10px 0 5px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #0077cc;
+      color: white;
+      text-decoration: none;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .btn.logout {
+      background-color: #cc0000;
+    }
+
+    .btn:hover {
+      opacity: 0.9;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>شركة ارتحت العقارية</h1>
+  </header>
+
+  <div class="container">
+    <h2>معلومات حسابي</h2>
+
+    <form>
+      <label for="name">الاسم الكامل</label>
+      <input type="text" id="name" name="name" value="عبدالعزيز الغامدي" required>
+
+      <label for="email">البريد الإلكتروني</label>
+      <input type="email" id="email" name="email" value="client@example.com" required>
+
+      <label for="password">كلمة المرور (لتغييرها)</label>
+      <input type="password" id="password" name="password" placeholder="اتركها فارغة إن لم ترغب بالتغيير">
+
+      <button type="submit" class="btn">حفظ التعديلات</button>
+      <button type="button" class="btn logout" onclick="logout()">تسجيل الخروج</button>
+    </form>
+  </div>
+
+  <script>
+    function logout() {
+      alert("تم تسجيل الخروج بنجاح.");
+      window.location.href = "login.html"; // أو تغيير حسب اسم صفحة الدخول لديك
+    }
+  </script>
+
+</body>
+</html>

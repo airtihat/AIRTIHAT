@@ -20,10 +20,27 @@
     main { flex: 1; }
 
     .banner {
-      background: linear-gradient(to right, #004080, #3399ff);
+      position: relative;
       color: white;
       padding: 60px 20px;
       text-align: center;
+      overflow: hidden;
+    }
+
+    .banner video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+      opacity: 0.6;
+    }
+
+    .banner-content {
+      position: relative;
+      z-index: 1;
     }
 
     .section {
@@ -49,47 +66,40 @@
       padding: 20px;
       border-radius: 10px;
       width: 300px;
-      transition: transform 0.3s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-    }
-
-    .contact-form {
-      max-width: 600px;
-      margin: 0 auto;
       text-align: right;
     }
 
-    .contact-form label {
-      display: block;
-      margin-top: 15px;
-      font-weight: bold;
+    .card ul {
+      text-align: right;
+      padding-right: 20px;
     }
 
-    .contact-form input,
-    .contact-form textarea {
-      width: 100%;
-      padding: 10px;
-      margin-top: 5px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      resize: vertical;
+    .card li {
+      margin-bottom: 8px;
     }
 
-    .contact-form button {
-      margin-top: 20px;
-      background-color: #0077cc;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
+    .gallery {
+      margin-top: 40px;
+      overflow: hidden;
+      white-space: nowrap;
+      direction: ltr;
     }
 
-    .contact-form button:hover {
-      background-color: #005fa3;
+    .gallery a,
+    .gallery img {
+      display: inline-block;
+      margin: 0 10px;
+      border-radius: 10px;
+      transition: transform 0.5s ease;
+    }
+
+    .gallery img {
+      width: 300px;
+      height: auto;
+    }
+
+    .gallery:hover img {
+      transform: scale(1.05);
     }
   </style>
 </head>
@@ -100,42 +110,61 @@
 
   <main>
     <div class="banner">
-      <h1>مرحباً بكم في منصة ارتحت</h1>
-      <p>إدارة عقارات – خدمات مقاولات – صيانة متكاملة</p>
-    </div>
-
-    <div class="section" id="services">
-      <h2>خدماتنا</h2>
-      <div class="services">
-        <div class="card">
-          <h3>إدارة العقارات</h3>
-          <p>تأجير، صيانة، متابعة الدفعات والتقارير.</p>
-        </div>
-        <div class="card">
-          <h3>خدمات المقاولات</h3>
-          <p>بناء، ترميم، تجهيزات داخلية وخارجية.</p>
-        </div>
-        <div class="card">
-          <h3>الصيانة الشاملة</h3>
-          <p>كهرباء، سباكة، دهانات، مكيفات والمزيد.</p>
-        </div>
+      <video autoplay muted loop playsinline>
+        <source src="3.mp4" type="video/mp4">
+        متصفحك لا يدعم تشغيل الفيديو.
+      </video>
+      <div class="banner-content">
+        <h1>مرحباً بكم في منصة ارتحت</h1>
+        <p>إدارة عقارات – خدمات مقاولات – صيانة متكاملة</p>
       </div>
     </div>
 
-    <div class="section" id="contact">
-      <h2>تواصل معنا</h2>
-      <form class="contact-form">
-        <label for="name">الاسم الكامل</label>
-        <input type="text" id="name" name="name" placeholder="ادخل اسمك" required>
+    <div class="section" id="services">
+      <h2>تفصيل خدماتنا</h2>
+      <div class="services">
+        <div class="card">
+          <h3>إدارة العقارات</h3>
+          <ul>
+            <li>إدارة وحدات سكنية وتجارية</li>
+            <li>تأجير ومتابعة العقود</li>
+            <li>تحصيل الإيجارات والتقارير</li>
+            <li>تسويق العقار ومتابعة العملاء</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>خدمات المقاولات</h3>
+          <ul>
+            <li>بناء جديد وتشطيب</li>
+            <li>ترميمات داخلية وخارجية</li>
+            <li>تصميم داخلي وديكورات</li>
+            <li>إشراف هندسي على المشاريع</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>الصيانة الشاملة</h3>
+          <ul>
+            <li>كهرباء وإنارة</li>
+            <li>سباكة وتسريبات</li>
+            <li>صيانة مكيفات</li>
+            <li>دهانات وعزل حراري</li>
+          </ul>
+        </div>
+      </div>
 
-        <label for="email">البريد الإلكتروني</label>
-        <input type="email" id="email" name="email" placeholder="ادخل بريدك" required>
-
-        <label for="message">رسالتك</label>
-        <textarea id="message" name="message" rows="4" placeholder="اكتب رسالتك هنا" required></textarea>
-
-        <button type="submit">إرسال</button>
-      </form>
+      <!-- معرض الصور المتحرك -->
+      <div class="gallery" id="imageGallery">
+        <img src="01.png" alt="صورة 1">
+        <img src="02.jpg" alt="صورة 2">
+        <a href="https://wa.me/966500000000?text=مرحبًا، أود الاستفسار عن خدمات إدارة العقارات." target="_blank">
+          <img src="2.png" alt="تواصل عبر واتساب">
+        </a>
+        <img src="01.png" alt="صورة 4">
+        <img src="02.jpg" alt="صورة 5">
+        <a href="https://wa.me/966500000000?text=مرحبًا، أود معرفة المزيد عن صيانة العقارات." target="_blank">
+          <img src="2.png" alt="واتساب">
+        </a>
+      </div>
     </div>
   </main>
 
@@ -143,17 +172,23 @@
   <div id="footer">تحميل الفوتر...</div>
 
   <script>
-    // تحميل الهيدر
     fetch("header.html")
-      .then(response => response.text())
+      .then(res => res.text())
       .then(data => document.getElementById("header").innerHTML = data)
       .catch(err => console.error("خطأ في تحميل الهيدر:", err));
 
-    // تحميل الفوتر
     fetch("footer.html")
-      .then(response => response.text())
+      .then(res => res.text())
       .then(data => document.getElementById("footer").innerHTML = data)
       .catch(err => console.error("خطأ في تحميل الفوتر:", err));
+
+    setInterval(() => {
+      const gallery = document.getElementById("imageGallery");
+      gallery.scrollLeft += 1;
+      if (gallery.scrollLeft >= gallery.scrollWidth - gallery.clientWidth) {
+        gallery.scrollLeft = 0;
+      }
+    }, 20);
   </script>
 
 </body>
